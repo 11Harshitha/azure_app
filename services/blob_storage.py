@@ -1,5 +1,9 @@
 import os
 from azure.storage.blob import BlobServiceClient
+from dotenv import load_dotenv
+
+load_dotenv()
+print("blob storage")
 
 def blob_storage_connectivity(container_name, blob_name):
     
