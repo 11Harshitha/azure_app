@@ -1,5 +1,6 @@
 import os
 from openai import AzureOpenAI
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -38,4 +39,4 @@ def llm_connectivity():
 
     print(response.choices[0].message.content)
 
-llm_connectivity()
+
