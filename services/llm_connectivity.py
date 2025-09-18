@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 # from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 
-def llm_connectivity():
+def azure_openai(query):
     endpoint = os.getenv("azure_openai_endpoint")
     model_name = "gpt-4o"
     deployment = "gpt-4o"
@@ -24,11 +24,11 @@ def llm_connectivity():
         messages=[
             {
                 "role": "system",
-                "content": "You are a helpful assistant.",
+                "content": "You are a helpful assistant who can answer user query based on your knowledge.",
             },
             {
                 "role": "user",
-                "content": "I am going to Paris, what should I see?",
+                "content": f"{query}",
             }
         ],
         max_tokens=4096,
@@ -37,6 +37,7 @@ def llm_connectivity():
         model=deployment
     )
 
-    print(response.choices[0].message.content)
+    return response.choices[0].message.content
+    
 
 

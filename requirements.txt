@@ -1,2 +1,4 @@
 azure-storage-blob
 openai
+pandas
+openpyxl

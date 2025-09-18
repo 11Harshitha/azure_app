@@ -1,5 +1,6 @@
 import os
 from azure.storage.blob import BlobServiceClient
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -27,3 +28,26 @@ def blob_storage_connectivity(container_name, blob_name):
 
     return f"Blob '{BLOB_NAME}' downloaded to '{LOCAL_FILE_PATH}'"
 
+
+def blob_storage_excel(container_name, blob_name):
+    # Replace with your actual values or environment variables
+    STORAGE_ACCOUNT_NAME = os.environ.get("AZURE_STORAGE_ACCOUNT_NAME")
+    STORAGE_ACCOUNT_KEY = os.environ.get("AZURE_STORAGE_ACCOUNT_KEY")
+    CONNECTION_STRING = os.environ.get("AZURE_STORAGE_CONNECTION_STRING") # Alternatively, use connection string
+
+    CONTAINER_NAME = container_name #"genaidemo"
+    BLOB_NAME = blob_name #"genaidemo.docx"
+    # LOCAL_FILE_PATH = "GenerativeAI_100_Questions.xlsx"
+
+    # Create a BlobServiceClient
+    if CONNECTION_STRING:
+        blob_service_client = BlobServiceClient.from_connection_string(CONNECTION_STRING)
+
+    blob_client = blob_service_client.get_blob_client(container=CONTAINER_NAME, blob=BLOB_NAME)
+
+    # Download blob content as bytes
+    blob_data = blob_client.download_blob().readall()
+
+    return blob_data
+
+    
