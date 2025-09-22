@@ -1,0 +1,41 @@
+2025-09-22 21:52:31,006 - MyAppLogger - INFO - Inside blob storage connectivity function
+2025-09-22 21:52:31,061 - MyAppLogger - DEBUG - connecton successfull
+2025-09-22 21:52:31,061 - azure.core.pipeline.policies.http_logging_policy - INFO - Request URL: 'https://genaidemostoragetest.blob.core.windows.net/genaidemo/GenerativeAI_100_Questions.xlsx'
+Request method: 'GET'
+Request headers:
+    'x-ms-range': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.26.0 Python/3.12.10 (Windows-11-10.0.26100-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '569d13c5-97d0-11f0-909d-dfeadba440d8'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+2025-09-22 21:52:31,066 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): genaidemostoragetest.blob.core.windows.net:443
+2025-09-22 21:52:32,561 - urllib3.connectionpool - DEBUG - https://genaidemostoragetest.blob.core.windows.net:443 "GET /genaidemo/GenerativeAI_100_Questions.xlsx HTTP/1.1" 206 7391
+2025-09-22 21:52:32,568 - azure.core.pipeline.policies.http_logging_policy - INFO - Response status: 206
+Response headers:
+    'Content-Length': '7391'
+    'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    'Content-Range': 'REDACTED'
+    'Last-Modified': 'Thu, 18 Sep 2025 17:10:07 GMT'
+    'Accept-Ranges': 'REDACTED'
+    'ETag': '"0x8DDF6D6377B1BC9"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '7c9ac0f8-401e-0007-38dd-2ba036000000'
+    'x-ms-client-request-id': '569d13c5-97d0-11f0-909d-dfeadba440d8'
+    'x-ms-version': 'REDACTED'
+    'x-ms-creation-time': 'REDACTED'
+    'x-ms-blob-content-md5': 'REDACTED'
+    'x-ms-lease-status': 'REDACTED'
+    'x-ms-lease-state': 'REDACTED'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 22 Sep 2025 16:22:32 GMT'
+2025-09-22 21:52:32,569 - MyAppLogger - DEBUG - Download success
+2025-09-22 21:52:34,263 - MyAppLogger - DEBUG -                                             Question                                             Answer
+0                         What is Generative AI? (1)  Generative AI is a type of AI that creates new...
+1         Name two popular Generative AI models. (2)  GPT (OpenAI) and DALL·E are popular Generative...
+2                   What is a Transformer in AI? (3)  A Transformer is a deep learning architecture ...
+3  What is the difference between discriminative ...  Discriminative models classify data, while gen...
+4  Give one use case of Generative AI in educatio...  Generative AI can create practice question pap...
